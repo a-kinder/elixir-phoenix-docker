@@ -33,6 +33,7 @@ config :demo, DemoWeb.Endpoint,
 # Watch static and templates for browser reloading.
 config :demo, DemoWeb.Endpoint,
   live_reload: [
+    interval: 1000,
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},

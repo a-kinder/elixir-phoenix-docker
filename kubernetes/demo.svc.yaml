@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: demo
+  name: demo-deployment
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: demo
+  type: LoadBalancer # this is a loadbalancer so it can be viewed on the internet. Not usually required if you have an ingress contoller set up for your cluster.
