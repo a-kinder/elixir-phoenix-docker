@@ -6,10 +6,12 @@ RUN apt-get update -yq && \
     apt-get install -yq yarn apt-utils nodejs build-essential ruby ruby-all-dev  inotify-tools
 
 COPY . /srv
-WORKDIR /srv
+WORKDIR /srv/assets
 
-# RUN npm install --no-bin-links 
-# RUN node node_modules/brunch/bin/brunch build
+RUN npm install --no-bin-links 
+RUN node node_modules/brunch/bin/brunch build
+
+WORKDIR /srv
 
 RUN mix local.hex --force
 RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phx_new-1.3.0.ez

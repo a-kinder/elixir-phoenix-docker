@@ -55,5 +55,5 @@ config :demo, Demo.Repo,
   username: System.get_env("PG_USERNAME"),
   password: System.get_env("PG_PASSWORD"),
   hostname: System.get_env("PG_HOST"),
-  database: "demo_dev",
+  database: System.get_env("PG_DATABASE"),
   pool_size: 10

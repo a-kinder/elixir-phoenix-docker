@@ -2,7 +2,7 @@
 
 To start your Phoenix server:
 
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
+  * Migrate your database with `mix ecto.migrate`
   * Start application with `docker-compose up [--build]`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.

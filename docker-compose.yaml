@@ -19,9 +19,14 @@ services:
      - PG_HOST=postgres
      - PG_USERNAME=postgres
      - PG_PASSWORD=postgres
+     - PG_DATABASE=demo_dev
     links: 
      - postgres
   postgres:
     image: postgres:10.4
     ports:
-     - 5432
+     - 5432:5432
+    environment: 
+     - POSTGRES_DB=demo_dev
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
