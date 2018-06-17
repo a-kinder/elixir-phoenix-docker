@@ -19,3 +19,59 @@ spec:
         image: angelakinder/php-consumer:latest
         ports:
         - containerPort: 80
+        env:
+        - name: MIX_ENV
+          valueFrom: 
+            configMapKeyRef:
+              key:  mix-env
+              name: demo
+        - name: APP_NAME
+          valueFrom: 
+            configMapKeyRef:
+              key:  app-name
+              name: demo
+        - name: PORT
+          valueFrom: 
+            configMapKeyRef:
+              key:  port
+              name: demo
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-db
+              name: demo
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-password
+              name: demo
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-user
+              name: demo
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-host
+              name: demo    
+      - name: postgres
+        image: postgres:10.4
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-db
+              name: demo
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-password
+              name: demo
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              key: postgres-user
+              name: demo

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo
+  namespace: default
+data:
+  postgres-db: demo_dev
+  postgres-password: postgres # should usually be in a secret but i'm lazy
+  postgres-user: postgres
+  mix-env: dev
+  app-name: k8s_demo
+  port: "4000"
