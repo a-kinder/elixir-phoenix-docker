@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app:
+    image: elixir:1.6.5
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - 4000:4000
+    volumes:
+     - ./lib:/srv/lib
+     - ./assets:/srv/assets
+     - ./config:/srv/config
+    command: mix phx.server
+    environment: 
+     - MIX_ENV=dev
+     - APP_NAME=k8s_demo
+     - PORT=4000
+     - PG_HOST=postgres
+     - PG_USERNAME=postgres
+     - PG_PASSWORD=postgres
+    links: 
+     - postgres
+  postgres:
+    image: postgres:10.4
+    ports:
+     - 5432
