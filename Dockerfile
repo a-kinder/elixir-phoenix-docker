@@ -20,3 +20,6 @@ RUN mix deps.get --force
 RUN mix local.rebar --force
 RUN mix deps.compile --force
 
+EXPOSE 4000
+
+CMD mix phx.server

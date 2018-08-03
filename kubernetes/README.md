@@ -18,7 +18,7 @@ to get minikube running:
  - download minikube (local cluster virtualization for kubernetes)
  - `minikube start`
  - create application
- - curl $(minikube service hello-minikube --url)
+ - open $(minikube service demo-deployment --url)
  
 what is a container in this context?
  - an environment that has it's own OS, dependencies, environment variables, etc but shares the kernel with the host (lighterweight than using a full VM for each application)
@@ -31,3 +31,8 @@ To do:
  - scale up/down
  - add a sidecar container
  - update kubernetes when image is pushed?
+
+ Potential solutions:
+  - service mesh (encryption in transit)
+  - cloud storage 
+  - trello replacement?

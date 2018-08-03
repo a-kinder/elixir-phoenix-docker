@@ -1,11 +1,18 @@
 # Demo
 
+If not already running:
+
+  * Start docker daemon
+  * Start minikube with `minikube start`
+
 To start your Phoenix server:
 
-  * Migrate your database with `mix ecto.migrate`
   * Start application with `docker-compose up [--build]`
+  * Migrate your database with `docker-compose run app mix ecto.migrate`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+To view:
+
+  * `curl $(minikube service demo-deployment --url)`
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
@@ -16,3 +23,5 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+  * Kubernetes: https://kubernetes.io/docs/home
+  * Docker: https://docs.docker.com
