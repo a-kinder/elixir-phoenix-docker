@@ -21,5 +21,6 @@ RUN mix local.rebar --force
 RUN mix deps.compile --force
 
 EXPOSE 4000
+RUN echo "I changed a thing!"
 
 CMD mix phx.server

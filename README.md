@@ -12,7 +12,7 @@ To start your Phoenix server:
 
 To view:
 
-  * `curl $(minikube service demo-deployment --url)`
+  * `open $(minikube service demo-deployment --url)`
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 

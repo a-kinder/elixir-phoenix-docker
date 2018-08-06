@@ -5,7 +5,7 @@ metadata:
   labels:
     app: demo
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: demo
@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: demo
-        image: angelakinder/elixir-phoenix:0.2
+        image: angelakinder/elixir-phoenix:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 4000
         env:
